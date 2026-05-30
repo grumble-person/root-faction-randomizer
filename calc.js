@@ -13,7 +13,7 @@ fetchData();
 
 function initPool() { // TODO: There must be a less dumb way to do this
 	arrayPool = [];
-	arrayPool = JSON.parse(JSON.stringify(arrayExpansions.expansionBase));
+	arrayPool = arrayPool.concat(arrayExpansions.expansionBase);
 	if (document.getElementById("expansionRiverfolk").checked) {
 		arrayPool = arrayPool.concat(arrayExpansions.expansionRiverfolk);
 	}
