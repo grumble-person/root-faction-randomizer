@@ -51,7 +51,7 @@ function rollFactions() {
 		if (playerCount == 2) {
 			console.log ("we should truncate for 2 players");
 			for (let i = (arrayPool.length-1); i > -1; i--) {
-				console.log(arrayPool[i].factionName + " has " + arrayPool[i].factionReach + ", we need at least " + reachViable-10);
+				console.log(arrayPool[i].factionName + " has " + arrayPool[i].factionReach + ", we need at least " + (reachViable - 10));
 				if (arrayPool[i].factionReach < (reachViable - 10)) {
 					console.log("truncating for 2p... goodbye " + arrayPool[i].factionName);
 					arrayPool.splice(i, 1);
