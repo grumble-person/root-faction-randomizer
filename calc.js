@@ -67,7 +67,7 @@ function rollFactions() {
 		}
 	}
 
-	if (reachSum <= reachViable) { //FIX RECURSION
+	if (reachSum < reachViable) { //FIX RECURSION
 		console.log('Reach too low; retrying...');
 		rollFactions();
 	} else {
