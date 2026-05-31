@@ -57,13 +57,12 @@ function rollFactions() {
 		reachSum = reachSum + arrayPool[rand].factionReach;
 		console.log("trying " + arrayPool[rand].factionName + ", reachSum = " + reachSum);
 		arraySelected.push(Object.assign({}, arrayPool[rand]));
-		/* this will set vagabond reach to 2 forever!
+		// i need to understand this better
 		if (arrayPool[rand].factionName == "Vagabond" && arrayPool[rand].factionReach == 5) {
 			arrayPool[rand].factionReach = 2;
 		} else {
 			arrayPool.splice(rand, 1);
 		}
-		*/
 	}
 
 	if (reachSum <= reachViable) { //FIX RECURSION
