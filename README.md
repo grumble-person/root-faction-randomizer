@@ -2,6 +2,7 @@
 
 ## Demo Link
 [Live Demo](https://MarshDeer.github.io/root-faction-randomizer)
+[Live Demo (grumble version)](https://grumble-person.github.io/root-faction-randomizer)
 
 ## Link here!
 Wanna link here? Copy this codeblock into your website to use the official 88x31 button!
