@@ -41,19 +41,32 @@ function rollFactions() {
 	console.log("players selected: " + playerCount + "; reach needed: " + reachViable);
 	arraySelected = [];
 
+	// there is an extremely low chance of the eyrie being selected when every low reach faction is in the pool
+	// this gives them a better shot by truncating the pool of factions that can never be selected
+	if playercount = 2 {
+		for (let i = arrayPool.length-1; i < -1; i--) {
+			if arrayPool[i].factionReach < (reachViable - 10) {
+				console.log("truncating for 2p... goodbye " + arrayPool[i].factionName);
+				arrayPool.splice(i, 1);
+			}
+		}
+	}
+	
 	while (arraySelected.length < playerCount) {
 		let rand = Math.floor(Math.random() * arrayPool.length);
 		reachSum = reachSum + arrayPool[rand].factionReach;
 		console.log("trying " + arrayPool[rand].factionName + ", reachSum = " + reachSum);
 		arraySelected.push(Object.assign({}, arrayPool[rand]));
+		/* this will set vagabond reach to 2 forever!
 		if (arrayPool[rand].factionName == "Vagabond" && arrayPool[rand].factionReach == 5) {
 			arrayPool[rand].factionReach = 2;
 		} else {
 			arrayPool.splice(rand, 1);
 		}
+		*/
 	}
 
-	if (reachSum <= reachViable) {
+	if (reachSum <= reachViable) { //FIX RECURSION
 		console.log('Reach too low; retrying...');
 		rollFactions();
 	} else {
