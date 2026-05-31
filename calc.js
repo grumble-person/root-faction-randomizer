@@ -38,7 +38,7 @@ function rollFactions() {
 	console.log("players selected: " + playerCount);
 	let reachViable = arrayReach[playerCount - 2];
 	let reachSum = 0;
-	console.log("players selected: " + playerCount + "; reach needed: ": + reachViable);
+	console.log("players selected: " + playerCount + "; reach needed: " + reachViable);
 	arraySelected = [];
 
 	while (arraySelected.length < playerCount) {
