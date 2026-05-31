@@ -35,13 +35,16 @@ function roll() {
 function rollFactions() {
 	initPool();
 	let playerCount = document.querySelector("input[type=radio][name=playerCount]:checked").value;
+	console.log("players selected: " + playerCount);
 	let reachViable = arrayReach[playerCount - 2];
 	let reachSum = 0;
+	console.log("players selected: " + playerCount + "; reach needed: ": + reachViable);
 	arraySelected = [];
 
 	while (arraySelected.length < playerCount) {
 		let rand = Math.floor(Math.random() * arrayPool.length);
 		reachSum = reachSum + arrayPool[rand].factionReach;
+		console.log("trying " + arrayPool[rand].factionName + ", reachSum = " + reachSum);
 		arraySelected.push(Object.assign({}, arrayPool[rand]));
 		if (arrayPool[rand].factionName == "Vagabond" && arrayPool[rand].factionReach == 5) {
 			arrayPool[rand].factionReach = 2;
