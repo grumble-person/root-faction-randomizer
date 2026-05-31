@@ -57,7 +57,7 @@ function rollFactions() {
 		reachSum = reachSum + arrayPool[rand].factionReach;
 		console.log("trying " + arrayPool[rand].factionName + ", reachSum = " + reachSum);
 		arraySelected.push(Object.assign({}, arrayPool[rand]));
-		// i need to understand this better
+		// after first finding vagabond, this makes all future instances of vagabond reach 2, even in new rolls, FIX
 		if (arrayPool[rand].factionName == "Vagabond" && arrayPool[rand].factionReach == 5) {
 			arrayPool[rand].factionReach = 2;
 		} else {
